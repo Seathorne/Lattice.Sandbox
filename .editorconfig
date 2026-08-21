@@ -1,0 +1,3 @@
+# Suppress IDE0130 warning: "namespace should match folder structure" across solution.
+[*.cs]
+dotnet_diagnostic.IDE0130.severity = none

@@ -9,6 +9,7 @@
     <RootNamespace>Lattice.Sandbox</RootNamespace>
     <AssemblyName>Lattice.Sandbox</AssemblyName>
     <TargetFramework>net48</TargetFramework>
+    <SupportedOSPlatform>windows</SupportedOSPlatform>
     <LangVersion>preview</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
