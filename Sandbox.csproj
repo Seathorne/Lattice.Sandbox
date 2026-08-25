@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="C:\Lattice\Lattice.csproj"/>
+    <ProjectReference Include="..\Lattice\Lattice.csproj"/>
   </ItemGroup>
 
   <PropertyGroup>

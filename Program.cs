@@ -1,15 +1,19 @@
 using System.Diagnostics;
-using Lattice.Text;
+using Lattice.Sandbox.Screens;
 
 namespace Lattice.Sandbox;
 
 public class Program
 {
-    public static void Main(string[] args)
+    private static TestScreen _mainScreen = null!;
+
+    public static void Main()
     {
         Trace.Listeners.Add(new TextWriterTraceListener("lattice-trace.log"));
         Trace.AutoFlush = true;
-        
-        new Lattice.Terminal().RunDiagnostics([ProbeRanges.MahjongTiles]);
+
+        _mainScreen = new TestScreen();
+
+        new Terminal().Run(_mainScreen);
     }
 }

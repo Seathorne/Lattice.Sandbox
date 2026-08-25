@@ -1,6 +1,7 @@
 # Visual Studio / VS Code
 .vs/
 .vscode/
+*.code-workspace
 
 # Build outputs
 [Bb]uild/
