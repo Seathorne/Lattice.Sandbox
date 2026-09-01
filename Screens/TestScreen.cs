@@ -1,3 +1,4 @@
+using Lattice.Drawing;
 using Lattice.Elements;
 using Lattice.Screens;
 
@@ -6,13 +7,24 @@ namespace Lattice.Sandbox.Screens;
 public sealed class TestScreen : Screen
 {
     [FillWidth]
+    [FixedHeight(3)]
+    [Border(BorderWeight.Heavy, BorderStyle.Dense)]
     private ButtonElement _hello = null!;
 
     [FillWidth]
+    [FixedHeight(3)]
+    [Border(BorderMode.Simple)]
     private ButtonElement _world = null!;
 
     [FillWidth]
+    [FixedHeight(3)]
+    [Border(BorderWeight.Light, BorderStyle.Solid)]
     private TextElement _status = null!;
+
+    [Border(BorderWeight.Light, BorderStyle.Sparse)]
+    private GridElement _root = null!;
+
+    private GridElement _buttons = null!;
 
     protected override Element Build()
     {
@@ -23,15 +35,16 @@ public sealed class TestScreen : Screen
         _hello.OnActivate = () => _status.Text = "hello pressed.";
         _world.OnActivate = () => _status.Text = "world pressed.";
 
-        GridElement root = GridElement.Column(2);
-        GridElement buttons = GridElement.Row(2);
+        _root = GridElement.Column(2);
+        _buttons = GridElement.Row(2);
+        _buttons.Border = Border.Double;
 
-        buttons.AddChild(_hello);
-        buttons.AddChild(_world);
+        _buttons.AddChild(_hello);
+        _buttons.AddChild(_world);
 
-        root.AddChild(buttons);
-        root.AddChild(_status);
+        _root.AddChild(_buttons);
+        _root.AddChild(_status);
 
-        return root;
+        return _root;
     }
 }
